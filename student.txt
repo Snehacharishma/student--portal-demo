@@ -1,0 +1,5 @@
+name="snehacharishma"
+suc="2358250061"
+rollno="04"
+course="BCA"
+email id="snehacharishma@gmail.com
