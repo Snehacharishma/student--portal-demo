@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GreenLeaf City Zoo</title>
+  <style>
+    :root{
+      --bg:#f6f8fb;
+      --card:#ffffff;
+      --ink:#1e293b;
+      --accent:#0ea5e9;
+      --muted:#64748b;
+      --ring: #bae6fd;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial;
+      color:var(--ink);
+      background:linear-gradient(180deg, #eef6ff, var(--bg) 35%);
+      line-height:1.6;
+    }
+    header{
+      position:sticky; top:0; z-index:10;
+      background:rgba(255,255,255,.9); backdrop-filter:saturate(1.4) blur(8px);
+      border-bottom:1px solid #e5e7eb;
+    }
+    .container{max-width:1100px; margin:0 auto; padding:0 16px;}
+    .bar{display:flex; align-items:center; justify-content:space-between; padding:14px 0;}
+    nav a{
+      text-decoration:none; color:var(--ink); font-weight:600; margin:0 10px;
+      padding:6px 10px; border-radius:10px;
+    }
+    nav a:hover, nav a:focus{background:var(--ring); outline:none}
+    .hero{
+      padding:48px 0 24px;
+      text-align:center;
+    }
+    .hero h1{font-size:clamp(28px, 4vw, 42px); margin:0 0 6px}
+    .hero p{color:var(--muted); margin:0}
+    .grid{
+      display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      margin:24px 0;
+    }
+    .card{
+      background:var(--card); border:1px solid #e5e7eb; border-radius:16px;
+      padding:16px; box-shadow:0 4px 14px rgba(15,23,42,.06);
+    }
+    h2{margin:6px 0 12px; font-size:22px}
+    ul{padding-left:18px; margin:8px 0}
+    .tag{display:inline-block; font-size:12px; padding:2px 8px; border:1px solid #94a3b8; border-radius:999px; color:#0f172a; margin:2px 6px 0 0}
+    table{
+      width:100%; border-collapse:collapse; background:var(--card);
+      border:1px solid #e5e7eb; border-radius:16px; overflow:hidden;
+    }
+    th, td{padding:12px; border-bottom:1px solid #e5e7eb; text-align:left}
+    th{background:#f1f5f9}
+    tr:last-child td{border-bottom:none}
+    details{background:var(--card); border:1px solid #e5e7eb; border-radius:16px; padding:12px 16px}
+    details+details{margin-top:10px}
+    summary{cursor:pointer; font-weight:600}
+    .notice{
+      border-left:4px solid var(--accent); background:#e0f2fe; color:#0c4a6e;
+      padding:10px 12px; border-radius:10px; margin:16px 0;
+    }
+    form .row{display:grid; gap:12px; grid-template-columns:1fr 1fr}
+    label{display:block; font-weight:600; margin:8px 0 4px}
+    input, select, textarea{
+      width:100%; padding:10px 12px; border:1px solid #cbd5e1; border-radius:12px; font:inherit;
+      background:#fff;
+    }
+    input:focus, select:focus, textarea:focus{outline:2px solid var(--ring); border-color:var(--accent)}
+    .actions{display:flex; gap:10px; align-items:center; margin-top:12px}
+    .btn{
+      border:0; padding:10px 14px; border-radius:12px; font-weight:700; cursor:pointer;
+      background:var(--accent); color:#fff;
+    }
+    .btn.secondary{background:#1118270d; color:#111827}
+    footer{
+      margin-top:32px; padding:22px 0 36px; color:var(--muted); text-align:center;
+    }
+    .section{padding:8px 0 18px}
+    .small{font-size:12px; color:var(--muted)}
+    .skip{position:absolute; left:-9999px}
+    .skip:focus{left:16px; top:10px; background:#fff; padding:8px 10px; border-radius:10px; border:1px solid #e5e7eb}
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip">Skip to content</a>
+  <header>
+    <div class="container bar">
+      <div aria-label="site title"><strong>GreenLeaf City Zoo</strong></div>
+      <nav aria-label="main">
+        <a href="#about">About</a>
+        <a href="#animals">Animals</a>
+        <a href="#plan">Plan Visit</a>
+        <a href="#tickets">Tickets</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <section class="hero" id="about">
+      <h1>Welcome to GreenLeaf City Zoo</h1>
+      <p>Discover wildlife, learn conservation, and enjoy a full day of family-friendly fun — all without leaving the city.</p>
+      <div class="notice" role="status">
+        Summer Hours (Apr–Sep): 9:00 AM – 6:00 PM · Closed on Mondays for animal care.
+      </div>
+    </section>
+
+    <section class="section" id="highlights">
+      <h2>Today’s Highlights</h2>
+      <div class="grid">
+        <div class="card">
+          <strong>Penguin Parade</strong>
+          <p class="small">11:00 AM · Coastal Boardwalk</p>
+        </div>
+        <div class="card">
+          <strong>Reptile Talk</strong>
+          <p class="small">1:30 PM · Herpetarium</p>
+        </div>
+        <div class="card">
+          <strong>Big Cats Enrichment</strong>
+          <p class="small">4:00 PM · Savannah Zone</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="animals">
+      <h2>Animals & Habitats</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Savannah</h3>
+          <ul>
+            <li>Lions <span class="tag">Apex</span></li>
+            <li>Giraffes <span class="tag">Gentle</span></li>
+            <li>Zebras <span class="tag">Herd</span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Tropical Rainforest</h3>
+          <ul>
+            <li>Orangutans <span class="tag">Arboreal</span></li>
+            <li>Poison Dart Frogs <span class="tag">Tiny</span></li>
+            <li>Toucans <span class="tag">Colorful</span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Coastal Cliffs</h3>
+          <ul>
+            <li>Penguins <span class="tag">Aquatic</span></li>
+            <li>Sea Lions <span class="tag">Playful</span></li>
+            <li>Pelicans <span class="tag">Diving</span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Reptile House</h3>
+          <ul>
+            <li>Komodo Dragons <span class="tag">Gigantic</span></li>
+            <li>Green Anacondas <span class="tag">Constric.</span></li>
+            <li>Chameleons <span class="tag">Camouflage</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="plan">
+      <h2>Plan Your Visit</h2>
+      <table aria-describedby="hours">
+        <thead>
+          <tr><th>Day</th><th>Hours</th><th>Notes</th></tr>
+        </thead>
+        <tbody id="hours">
+          <tr><td>Mon</td><td>Closed</td><td>Veterinary care & maintenance</td></tr>
+          <tr><td>Tue–Fri</td><td>9:00 AM – 6:00 PM</td><td>Last entry 5:15 PM</td></tr>
+          <tr><td>Sat–Sun</td><td>9:00 AM – 7:00 PM</td><td>Last entry 6:15 PM</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section" id="tickets">
+      <h2>Tickets & Pricing</h2>
+      <div class="grid">
+        <div class="card">
+          <strong>General</strong>
+          <p>Adults: ₹300 · Students: ₹200 · Kids (3–12): ₹150</p>
+          <p class="small">Under 3 free · Wheelchair users free entry</p>
+        </div>
+        <div class="card">
+          <strong>Extras</strong>
+          <ul>
+            <li>Guided Tour: ₹120 per person</li>
+            <li>Train Ride: ₹60 per loop</li>
+            <li>Locker: ₹40 per day</li>
+          </ul>
+        </div>
+        <div class="card">
+          <strong>Rules</strong>
+          <ul>
+            <li>No feeding animals</li>
+            <li>Keep a safe distance</li>
+            <li>Use bins to keep habitats clean</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <details>
+        <summary>Can I bring outside food?</summary>
+        <p>Yes, picnic zones are available. Glass and alcohol are not permitted.</p>
+      </details>
+      <details>
+        <summary>Is parking available?</summary>
+        <p>Paid parking is available near the North and East gates.</p>
+      </details>
+      <details>
+        <summary>How can schools book group visits?</summary>
+        <p>Use the contact form and select “School/Group Booking”. We’ll get back within one business day.</p>
+      </details>
+    </section>
+
+    <section class="section" id="contact">
+      <h2>Contact & Feedback</h2>
+      <form aria-label="contact form">
+        <div class="row">
+          <div>
+            <label for="name">Full Name</label>
+            <input id="name" name="name" placeholder="Your name" required />
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required />
+          </div>
+        </div>
+        <div class="row">
+          <div>
+            <label for="purpose">Purpose</label>
+            <select id="purpose" name="purpose">
+              <option>General Inquiry</option>
+              <option>School/Group Booking</option>
+              <option>Accessibility Support</option>
+              <option>Lost & Found</option>
+            </select>
+          </div>
+          <div>
+            <label for="date">Preferred Visit Date</label>
+            <input id="date" name="date" type="date" />
+          </div>
+        </div>
+        <label for="msg">Message</label>
+        <textarea id="msg" name="message" rows="4" placeholder="How can we help?"></textarea>
+        <div class="actions">
+          <button class="btn" type="submit">Send</button>
+          <button class="btn secondary" type="reset">Reset</button>
+          <span class="small">We respect your privacy.</span>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> GreenLeaf City Zoo · Built with pure HTML & CSS
+  </footer>
+
+  <script>
+    // tiny enhancement: current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
